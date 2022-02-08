@@ -2,19 +2,25 @@ import { HiSearch } from "react-icons/hi";
 
 export const Hero = () => {
   return (
-    <div className="flex flex-col gap-8 justify-center items-center h-128 bg-indigo-100">
-      <label htmlFor="address">
-        <h1 className="text-4xl">What is your address?</h1>
-      </label>
-      <div className="flex items-center h-12 w-96 border-2 rounded-md bg-white">
-        <div className="px-3">
-          <HiSearch color="#a8a29e" className="w-6 h-6" />
-        </div>
+    <div className="flex flex-col gap-6 items-center pt-48">
+      <h1 className="text-5xl font-extrabold">Rate a Rental</h1>
+      <p className="text-xl">Discover and review rental properties</p>
+
+      <form role="search" className="flex items-center h-14 w-full md:w-128">
+        <label className="sr-only" htmlFor="address-search">
+          Search for rental property reviews:
+        </label>
         <input
-          id="address"
-          className="h-full w-full outline-0 focus:ring ring-blue-500"
+          id="address-search"
+          name="address-search"
+          type="text"
+          className="h-full w-full px-6 text-lg border-l-2 border-y-2 rounded-l-lg"
         />
-      </div>
+        <button className="flex justify-center items-center px-4 h-full bg-lime-700 rounded-r-lg">
+          <HiSearch aria-hidden color="white" className="w-8 h-8" />
+          <span className="sr-only">Search</span>
+        </button>
+      </form>
     </div>
   );
 };
